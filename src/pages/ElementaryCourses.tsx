@@ -1,11 +1,6 @@
 import Layout from "@/components/Layout";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Progress } from "@/components/ui/progress";
-import { Book, Headphones, Mic, Pen } from "lucide-react";
-import CourseTopics from "@/components/courses/CourseTopics";
+import CourseTabs from "@/components/courses/CourseTabs";
 import type { Course } from "@/types/course";
 
 const ElementaryCourses = () => {
@@ -90,7 +85,7 @@ const ElementaryCourses = () => {
     },
   ];
 
-  const grade3to4Courses = [
+  const grade3to4Courses: Course[] = [
     {
       id: 4,
       title: "Tiếng Anh lớp 3-4",
@@ -167,7 +162,7 @@ const ElementaryCourses = () => {
     },
   ];
 
-  const grade5Courses = [
+  const grade5Courses: Course[] = [
     {
       id: 7,
       title: "Tiếng Anh lớp 5",
@@ -246,111 +241,29 @@ const ElementaryCourses = () => {
     },
   ];
 
-  const getSkillIcon = (iconName: "headphones" | "mic" | "book" | "pen") => {
-    switch(iconName) {
-      case "headphones":
-        return <Headphones size={16} />;
-      case "mic":
-        return <Mic size={16} />;
-      case "book":
-        return <Book size={16} />;
-      case "pen":
-        return <Pen size={16} />;
-    }
-  };
-
-  const renderCourseCards = (courses: Course[]) => {
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {courses.map((course) => (
-          <Card key={course.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-            <div className="h-48 overflow-hidden">
-              <img 
-                src={course.image} 
-                alt={course.title} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <CardHeader>
-              <div className="flex justify-between items-start">
-                <CardTitle className="text-lg">{course.title}</CardTitle>
-                <Badge variant="outline" className="bg-english-light">
-                  {course.level}
-                </Badge>
-              </div>
-              <CardDescription>{course.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex justify-between text-sm text-gray-600">
-                <span>{course.duration}</span>
-                <span>{course.lessons} bài học</span>
-              </div>
-              
-              <div className="flex flex-wrap gap-2">
-                {course.skills.map((skill) => (
-                  <Badge key={skill.id} className="flex items-center gap-1">
-                    {getSkillIcon(skill.icon)}
-                    {skill.name}
-                  </Badge>
-                ))}
-              </div>
-
-              {course.topics && <CourseTopics topics={course.topics} />}
-
-              {course.progress > 0 && (
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>Tiến độ</span>
-                    <span>{course.progress}%</span>
-                  </div>
-                  <Progress value={course.progress} />
-                </div>
-              )}
-            </CardContent>
-            <CardFooter>
-              <Button className="w-full">
-                {course.progress > 0 ? "Tiếp tục học" : "Bắt đầu học"}
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    );
-  };
-
   return (
     <Layout>
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">Giáo trình tiếng Anh tiểu học</h1>
+          <h1 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+            Giáo trình tiếng Anh tiểu học
+          </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Khám phá các khóa học tiếng Anh được thiết kế đặc biệt cho học sinh tiểu học, 
             từ lớp 1 đến lớp 5 với nội dung phù hợp từng độ tuổi và trình độ.
           </p>
         </div>
 
-        <Tabs defaultValue="grade1-2" className="mb-12">
-          <TabsList className="grid grid-cols-3 w-full max-w-md mx-auto mb-6">
-            <TabsTrigger value="grade1-2">Lớp 1-2</TabsTrigger>
-            <TabsTrigger value="grade3-4">Lớp 3-4</TabsTrigger>
-            <TabsTrigger value="grade5">Lớp 5</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="grade1-2">
-            {renderCourseCards(grade1to2Courses)}
-          </TabsContent>
-          
-          <TabsContent value="grade3-4">
-            {renderCourseCards(grade3to4Courses)}
-          </TabsContent>
-          
-          <TabsContent value="grade5">
-            {renderCourseCards(grade5Courses)}
-          </TabsContent>
-        </Tabs>
+        <CourseTabs 
+          grade1to2Courses={grade1to2Courses}
+          grade3to4Courses={grade3to4Courses}
+          grade5Courses={grade5Courses}
+        />
 
         <div className="bg-english-light p-8 rounded-lg text-center">
-          <h2 className="text-2xl font-heading font-bold mb-4">Không chắc con bạn nên bắt đầu từ đâu?</h2>
+          <h2 className="text-2xl font-heading font-bold mb-4">
+            Không chắc con bạn nên bắt đầu từ đâu?
+          </h2>
           <p className="text-gray-600 mb-6">
             Hãy cho con bạn làm bài kiểm tra trình độ miễn phí để chúng tôi gợi ý khóa học phù hợp nhất.
           </p>
