@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
-import { Book, Headphones, Mic, Edit } from "lucide-react";
+import { Book, Headphones, Mic, Edit, GraduationCap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Courses = () => {
   const beginnerCourses = [
@@ -193,6 +194,80 @@ const Courses = () => {
             Khám phá các khóa học tiếng Anh được thiết kế đặc biệt cho người Việt, 
             từ cấp độ sơ cấp đến nâng cao với trọng tâm vào các kỹ năng nghe, nói, đọc, viết.
           </p>
+        </div>
+
+        {/* Special course category section */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-heading font-bold mb-6">Khóa học theo đối tượng</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="hover-scale">
+              <CardHeader>
+                <div className="inline-flex p-3 rounded-full bg-blue-100 text-english-blue mb-4">
+                  <GraduationCap size={24} />
+                </div>
+                <CardTitle>Tiếng Anh Tiểu học</CardTitle>
+                <CardDescription>
+                  Khóa học tiếng Anh dành riêng cho học sinh tiểu học từ lớp 1 đến lớp 5, phù hợp với từng độ tuổi.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-1 text-sm mb-4">
+                  <li>Phù hợp với chương trình tiểu học Việt Nam</li>
+                  <li>Học qua trò chơi và hoạt động tương tác</li>
+                  <li>Phát triển đồng đều 4 kỹ năng cơ bản</li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button className="w-full" asChild>
+                  <Link to="/elementary-courses">Xem khóa học tiểu học</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="hover-scale">
+              <CardHeader>
+                <div className="inline-flex p-3 rounded-full bg-green-100 text-english-green mb-4">
+                  <Book size={24} />
+                </div>
+                <CardTitle>Tiếng Anh Trung học</CardTitle>
+                <CardDescription>
+                  Khóa học tiếng Anh dành cho học sinh THCS và THPT, tập trung vào ngữ pháp và học thuật.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-1 text-sm mb-4">
+                  <li>Chuẩn bị cho các kỳ thi quan trọng</li>
+                  <li>Rèn luyện kỹ năng viết và đọc hiểu nâng cao</li>
+                  <li>Luyện thi chứng chỉ quốc tế</li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button className="w-full" variant="outline">Sắp ra mắt</Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="hover-scale">
+              <CardHeader>
+                <div className="inline-flex p-3 rounded-full bg-yellow-100 text-english-yellow mb-4">
+                  <Mic size={24} />
+                </div>
+                <CardTitle>Tiếng Anh Người lớn</CardTitle>
+                <CardDescription>
+                  Khóa học tiếng Anh dành cho người đi làm, tập trung vào giao tiếp thực tế và tiếng Anh công sở.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-1 text-sm mb-4">
+                  <li>Tiếng Anh giao tiếp thực tế hàng ngày</li>
+                  <li>Tiếng Anh thương mại và kinh doanh</li>
+                  <li>Luyện phản xạ nói và nghe</li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button className="w-full" variant="outline">Sắp ra mắt</Button>
+              </CardFooter>
+            </Card>
+          </div>
         </div>
 
         <Tabs defaultValue="beginner" className="mb-12">

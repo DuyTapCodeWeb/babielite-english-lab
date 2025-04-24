@@ -11,16 +11,19 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-english-dark">
               Học tiếng Anh hiệu quả <span className="text-english-blue">nghe, nói, đọc, viết</span>
             </h1>
-            <p className="text-lg mb-8 text-gray-600">
+            <p className="text-lg mb-4 text-gray-600">
               Duy English Lab giúp người Việt rèn luyện các kỹ năng tiếng Anh thông qua các bài tập thực hành
               và phương pháp học tập hiện đại, hiệu quả.
+            </p>
+            <p className="text-lg mb-8 text-gray-600">
+              Giáo trình đặc biệt thiết kế cho học sinh tiểu học từ cơ bản đến nâng cao, giúp trẻ phát triển toàn diện các kỹ năng.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
                 <Link to="/register">Bắt đầu học ngay</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/courses">Xem giáo trình</Link>
+                <Link to="/elementary-courses">Khóa học tiểu học</Link>
               </Button>
             </div>
           </div>

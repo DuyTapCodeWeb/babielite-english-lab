@@ -10,6 +10,8 @@ import Speaking from "./pages/Speaking";
 import Reading from "./pages/Reading";
 import Writing from "./pages/Writing";
 import Courses from "./pages/Courses";
+import ElementaryCourses from "./pages/ElementaryCourses";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/reading" element={<Reading />} />
           <Route path="/writing" element={<Writing />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/elementary-courses" element={<ElementaryCourses />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -74,6 +74,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
     { name: "Reading", path: "/reading" },
     { name: "Writing", path: "/writing" },
     { name: "Giáo trình", path: "/courses" },
+    { name: "Liên hệ", path: "/contact" },
   ];
 
   const baseClasses = "font-medium hover:text-english-blue transition-colors";

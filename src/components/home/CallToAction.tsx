@@ -11,14 +11,14 @@ const CallToAction = () => {
         </h2>
         <p className="text-lg mb-8 max-w-3xl mx-auto">
           Đăng ký ngay hôm nay để bắt đầu hành trình học tiếng Anh hiệu quả với Duy English Lab.
-          Chúng tôi cung cấp nhiều khóa học phù hợp với mọi trình độ.
+          Chúng tôi cung cấp nhiều khóa học phù hợp với mọi trình độ, bao gồm cả giáo trình đặc biệt cho học sinh tiểu học.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button size="lg" variant="secondary" asChild>
             <Link to="/register">Đăng ký miễn phí</Link>
           </Button>
           <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-english-blue" asChild>
-            <Link to="/courses">Khám phá khóa học</Link>
+            <Link to="/elementary-courses">Khóa học cho tiểu học</Link>
           </Button>
         </div>
       </div>
