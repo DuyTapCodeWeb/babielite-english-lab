@@ -1,12 +1,12 @@
 
-import { headphones, mic, book, edit } from "lucide-react";
+import { Headphones, Mic, Book, Edit } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
 const SkillCards = () => {
   const skills = [
     {
-      icon: headphones,
+      icon: Headphones,
       title: "Listening",
       description: "Luyện nghe và hiểu tiếng Anh với các bài tập theo nhiều cấp độ.",
       color: "text-english-blue",
@@ -14,7 +14,7 @@ const SkillCards = () => {
       path: "/listening",
     },
     {
-      icon: mic,
+      icon: Mic,
       title: "Speaking",
       description: "Rèn luyện phát âm và khả năng giao tiếp tiếng Anh tự tin.",
       color: "text-english-red",
@@ -22,7 +22,7 @@ const SkillCards = () => {
       path: "/speaking",
     },
     {
-      icon: book,
+      icon: Book,
       title: "Reading",
       description: "Nâng cao kỹ năng đọc hiểu với các bài đọc đa dạng chủ đề.",
       color: "text-english-green",
@@ -30,7 +30,7 @@ const SkillCards = () => {
       path: "/reading",
     },
     {
-      icon: edit,
+      icon: Edit,
       title: "Writing",
       description: "Phát triển kỹ năng viết tiếng Anh với các mẫu câu và bài tập thực hành.",
       color: "text-english-yellow",

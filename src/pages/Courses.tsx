@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
-import { book, headphones, mic, edit } from "lucide-react";
+import { Book, Headphones, Mic, Edit } from "lucide-react";
 
 const Courses = () => {
   const beginnerCourses = [
@@ -98,13 +98,13 @@ const Courses = () => {
   const getSkillIcon = (skill: string) => {
     switch(skill.toLowerCase()) {
       case "nghe":
-        return <headphones size={16} />;
+        return <Headphones size={16} />;
       case "nói":
-        return <mic size={16} />;
+        return <Mic size={16} />;
       case "đọc":
-        return <book size={16} />;
+        return <Book size={16} />;
       case "viết":
-        return <edit size={16} />;
+        return <Edit size={16} />;
       default:
         return null;
     }

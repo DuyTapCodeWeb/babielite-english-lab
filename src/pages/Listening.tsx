@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Radio, RadioGroup } from "@radix-ui/react-radio-group";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
@@ -131,7 +131,7 @@ const Listening = () => {
                             : "border-gray-200"
                         }`}
                       >
-                        <Radio
+                        <RadioGroupItem
                           id={option.id}
                           value={option.id}
                           className="h-4 w-4 text-english-blue focus:ring-english-blue"
