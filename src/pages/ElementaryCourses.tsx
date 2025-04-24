@@ -1,14 +1,15 @@
-
 import Layout from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
-import { Book, Headphones, Mic, Edit } from "lucide-react";
+import { Book, Headphones, Mic, Pen } from "lucide-react";
+import CourseTopics from "@/components/courses/CourseTopics";
+import type { Course } from "@/types/course";
 
 const ElementaryCourses = () => {
-  const grade1to2Courses = [
+  const grade1to2Courses: Course[] = [
     {
       id: 1,
       title: "Tiếng Anh lớp 1-2",
@@ -16,9 +17,25 @@ const ElementaryCourses = () => {
       level: "Cơ bản",
       duration: "36 tuần",
       lessons: 72,
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Nghe", "Nói"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+      skills: [
+        { id: "1", name: "Nghe", icon: "headphones" },
+        { id: "2", name: "Nói", icon: "mic" }
+      ],
+      progress: 0,
+      topics: [
+        "Chào hỏi và giới thiệu",
+        "Số đếm 1-20",
+        "Màu sắc cơ bản",
+        "Động vật quen thuộc",
+        "Đồ dùng học tập",
+        "Gia đình"
+      ],
+      learningGoals: [
+        "Phát âm chuẩn bảng chữ cái",
+        "Nghe và nói các từ đơn giản",
+        "Hiểu và sử dụng câu đơn giản"
+      ]
     },
     {
       id: 2,
@@ -27,9 +44,25 @@ const ElementaryCourses = () => {
       level: "Cơ bản",
       duration: "24 tuần",
       lessons: 48,
-      image: "https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Đọc", "Viết"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1588072432836-e10032774350",
+      skills: [
+        { id: "3", name: "Đọc", icon: "book" },
+        { id: "4", name: "Viết", icon: "pen" }
+      ],
+      progress: 0,
+      topics: [
+        "Trường học",
+        "Thú cưng",
+        "Thức ăn và đồ uống",
+        "Quần áo",
+        "Các bộ phận cơ thể",
+        "Thời tiết"
+      ],
+      learningGoals: [
+        "Nhận biết và đọc 200+ từ vựng cơ bản",
+        "Viết được các từ đơn giản",
+        "Ghép từ thành câu ngắn"
+      ]
     },
     {
       id: 3,
@@ -38,9 +71,22 @@ const ElementaryCourses = () => {
       level: "Cơ bản",
       duration: "20 tuần",
       lessons: 40,
-      image: "https://images.unsplash.com/photo-1629227314568-59a4d2719151?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Nghe", "Nói"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1629227314568-59a4d2719151",
+      skills: [
+        { id: "5", name: "Nghe", icon: "headphones" },
+        { id: "6", name: "Nói", icon: "mic" }
+      ],
+      progress: 0,
+      topics: [
+        "Phát âm cơ bản",
+        "Câu giao tiếp đơn giản",
+        "Hội thoại trong thực tế"
+      ],
+      learningGoals: [
+        "Phát âm chuẩn các từ vựng cơ bản",
+        "Nói được các câu đơn giản",
+        "Học cách giao tiếp đơn giản"
+      ]
     },
   ];
 
@@ -52,9 +98,24 @@ const ElementaryCourses = () => {
       level: "Sơ cấp",
       duration: "36 tuần",
       lessons: 72,
-      image: "https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Nghe", "Nói", "Đọc", "Viết"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1588072432836-e10032774350",
+      skills: [
+        { id: "7", name: "Nghe", icon: "headphones" },
+        { id: "8", name: "Nói", icon: "mic" },
+        { id: "9", name: "Đọc", icon: "book" },
+        { id: "10", name: "Viết", icon: "pen" }
+      ],
+      progress: 0,
+      topics: [
+        "Tiếng Anh cơ bản",
+        "Các chủ đề phổ biến",
+        "Câu giao tiếp nâng cao"
+      ],
+      learningGoals: [
+        "Phát âm chuẩn các từ vựng cơ bản",
+        "Nói được các câu đơn giản",
+        "Học cách giao tiếp đơn giản"
+      ]
     },
     {
       id: 5,
@@ -63,9 +124,22 @@ const ElementaryCourses = () => {
       level: "Sơ cấp",
       duration: "28 tuần",
       lessons: 56,
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Đọc", "Viết"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
+      skills: [
+        { id: "11", name: "Đọc", icon: "book" },
+        { id: "12", name: "Viết", icon: "pen" }
+      ],
+      progress: 0,
+      topics: [
+        "Ngữ pháp cơ bản",
+        "Các chủ đề phổ biến",
+        "Câu giao tiếp nâng cao"
+      ],
+      learningGoals: [
+        "Phát âm chuẩn các từ vựng cơ bản",
+        "Nói được các câu đơn giản",
+        "Học cách giao tiếp đơn giản"
+      ]
     },
     {
       id: 6,
@@ -74,9 +148,22 @@ const ElementaryCourses = () => {
       level: "Sơ cấp",
       duration: "24 tuần",
       lessons: 48,
-      image: "https://images.unsplash.com/photo-1629227314568-59a4d2719151?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Nghe", "Nói"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1629227314568-59a4d2719151",
+      skills: [
+        { id: "13", name: "Nghe", icon: "headphones" },
+        { id: "14", name: "Nói", icon: "mic" }
+      ],
+      progress: 0,
+      topics: [
+        "Phát âm cơ bản",
+        "Các chủ đề phổ biến",
+        "Câu giao tiếp nâng cao"
+      ],
+      learningGoals: [
+        "Phát âm chuẩn các từ vựng cơ bản",
+        "Nói được các câu đơn giản",
+        "Học cách giao tiếp đơn giản"
+      ]
     },
   ];
 
@@ -88,9 +175,24 @@ const ElementaryCourses = () => {
       level: "Trung cấp",
       duration: "36 tuần",
       lessons: 72,
-      image: "https://images.unsplash.com/photo-1629227314568-59a4d2719151?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Nghe", "Nói", "Đọc", "Viết"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1629227314568-59a4d2719151",
+      skills: [
+        { id: "15", name: "Nghe", icon: "headphones" },
+        { id: "16", name: "Nói", icon: "mic" },
+        { id: "17", name: "Đọc", icon: "book" },
+        { id: "18", name: "Viết", icon: "pen" }
+      ],
+      progress: 0,
+      topics: [
+        "Tiếng Anh cơ bản",
+        "Các chủ đề phổ biến",
+        "Câu giao tiếp nâng cao"
+      ],
+      learningGoals: [
+        "Phát âm chuẩn các từ vựng cơ bản",
+        "Nói được các câu đơn giản",
+        "Học cách giao tiếp đơn giản"
+      ]
     },
     {
       id: 8,
@@ -99,9 +201,22 @@ const ElementaryCourses = () => {
       level: "Trung cấp",
       duration: "32 tuần",
       lessons: 64,
-      image: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Đọc", "Viết"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3",
+      skills: [
+        { id: "19", name: "Đọc", icon: "book" },
+        { id: "20", name: "Viết", icon: "pen" }
+      ],
+      progress: 0,
+      topics: [
+        "Tiếng Anh cơ bản",
+        "Các chủ đề phổ biến",
+        "Câu giao tiếp nâng cao"
+      ],
+      learningGoals: [
+        "Phát âm chuẩn các từ vựng cơ bản",
+        "Nói được các câu đơn giản",
+        "Học cách giao tiếp đơn giản"
+      ]
     },
     {
       id: 9,
@@ -110,50 +225,45 @@ const ElementaryCourses = () => {
       level: "Nâng cao",
       duration: "28 tuần",
       lessons: 56,
-      image: "https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      skills: ["Nghe", "Nói", "Đọc", "Viết"],
-      progress: 0
+      image: "https://images.unsplash.com/photo-1588072432836-e10032774350",
+      skills: [
+        { id: "21", name: "Nghe", icon: "headphones" },
+        { id: "22", name: "Nói", icon: "mic" },
+        { id: "23", name: "Đọc", icon: "book" },
+        { id: "24", name: "Viết", icon: "pen" }
+      ],
+      progress: 0,
+      topics: [
+        "Tiếng Anh cơ bản",
+        "Các chủ đề phổ biến",
+        "Câu giao tiếp nâng cao"
+      ],
+      learningGoals: [
+        "Phát âm chuẩn các từ vựng cơ bản",
+        "Nói được các câu đơn giản",
+        "Học cách giao tiếp đơn giản"
+      ]
     },
   ];
 
-  // Function to render the skill icon
-  const getSkillIcon = (skill: string) => {
-    switch(skill.toLowerCase()) {
-      case "nghe":
+  const getSkillIcon = (iconName: "headphones" | "mic" | "book" | "pen") => {
+    switch(iconName) {
+      case "headphones":
         return <Headphones size={16} />;
-      case "nói":
+      case "mic":
         return <Mic size={16} />;
-      case "đọc":
+      case "book":
         return <Book size={16} />;
-      case "viết":
-        return <Edit size={16} />;
-      default:
-        return null;
+      case "pen":
+        return <Pen size={16} />;
     }
   };
 
-  // Function to get skill color
-  const getSkillColor = (skill: string) => {
-    switch(skill.toLowerCase()) {
-      case "nghe":
-        return "bg-blue-100 text-english-blue";
-      case "nói":
-        return "bg-red-100 text-english-red";
-      case "đọc":
-        return "bg-green-100 text-english-green";
-      case "viết":
-        return "bg-yellow-100 text-english-yellow";
-      default:
-        return "bg-gray-100 text-gray-800";
-    }
-  };
-
-  // Function to render course cards
-  const renderCourseCards = (courses: typeof grade1to2Courses) => {
+  const renderCourseCards = (courses: Course[]) => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
-          <Card key={course.id} className="overflow-hidden hover-scale">
+          <Card key={course.id} className="overflow-hidden hover:shadow-lg transition-shadow">
             <div className="h-48 overflow-hidden">
               <img 
                 src={course.image} 
@@ -170,23 +280,25 @@ const ElementaryCourses = () => {
               </div>
               <CardDescription>{course.description}</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="flex justify-between text-sm mb-4">
+            <CardContent className="space-y-4">
+              <div className="flex justify-between text-sm text-gray-600">
                 <span>{course.duration}</span>
                 <span>{course.lessons} bài học</span>
               </div>
               
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2">
                 {course.skills.map((skill) => (
-                  <Badge key={skill} className={`flex items-center gap-1 ${getSkillColor(skill)}`}>
-                    {getSkillIcon(skill)}
-                    {skill}
+                  <Badge key={skill.id} className="flex items-center gap-1">
+                    {getSkillIcon(skill.icon)}
+                    {skill.name}
                   </Badge>
                 ))}
               </div>
 
+              {course.topics && <CourseTopics topics={course.topics} />}
+
               {course.progress > 0 && (
-                <div className="mb-2">
+                <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span>Tiến độ</span>
                     <span>{course.progress}%</span>
