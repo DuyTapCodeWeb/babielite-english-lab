@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-heading font-bold mb-4">BabiElite English Lab</h3>
+            <h3 className="text-xl font-heading font-bold mb-4">Duy English Lab</h3>
             <p className="text-gray-300 mb-4">
               Nơi học tiếng Anh hiệu quả cho người Việt, tập trung vào kỹ năng nghe, nói, đọc, viết.
             </p>
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} BabiElite English Lab. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Duy English Lab. All rights reserved.</p>
         </div>
       </div>
     </footer>

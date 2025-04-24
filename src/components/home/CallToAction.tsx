@@ -10,7 +10,7 @@ const CallToAction = () => {
           Sẵn sàng nâng cao kỹ năng tiếng Anh của bạn?
         </h2>
         <p className="text-lg mb-8 max-w-3xl mx-auto">
-          Đăng ký ngay hôm nay để bắt đầu hành trình học tiếng Anh hiệu quả với BabiElite English Lab.
+          Đăng ký ngay hôm nay để bắt đầu hành trình học tiếng Anh hiệu quả với Duy English Lab.
           Chúng tôi cung cấp nhiều khóa học phù hợp với mọi trình độ.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">

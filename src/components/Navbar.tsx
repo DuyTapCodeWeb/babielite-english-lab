@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <span className="text-2xl font-bold text-english-blue">
-            BabiElite
+            Duy
           </span>
           <span className="text-sm bg-english-blue text-white px-2 py-1 rounded">
             English Lab

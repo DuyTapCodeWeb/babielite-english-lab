@@ -12,7 +12,7 @@ const Hero = () => {
               Học tiếng Anh hiệu quả <span className="text-english-blue">nghe, nói, đọc, viết</span>
             </h1>
             <p className="text-lg mb-8 text-gray-600">
-              BabiElite English Lab giúp người Việt rèn luyện các kỹ năng tiếng Anh thông qua các bài tập thực hành
+              Duy English Lab giúp người Việt rèn luyện các kỹ năng tiếng Anh thông qua các bài tập thực hành
               và phương pháp học tập hiện đại, hiệu quả.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
